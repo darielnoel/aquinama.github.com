@@ -1,0 +1,73 @@
+.yui3-aquinama-item{
+	border-bottom: 1px solid #EEE;
+	position: relative;
+	
+}
+.yui3-aquinama-item:hover{
+	background-color: #ADCE4C;
+}
+
+.yui-3-aquinama-item-color{
+	background-color: #EEE;
+}
+
+.yui3-aquinama-item-data{
+	padding: 10px;
+	padding-bottom: 3px;
+}
+
+.yui3-aquinama-item-data:hover{
+	cursor: pointer;
+}
+
+.yui3-aquinama-item-control{
+	float: right;
+	padding: 10px;
+}
+
+.yui3-aquinama-item-container{
+	border-top:1px solid #EEE;
+}
+
+.yui-3-aquinama-item-color .yui3-aquinama-item-content{
+	border-bottom:1px solid #FEFEFE;
+}
+
+.yui3-aquinama-item-date{
+	float: right;
+	line-height: 24px;
+}
+
+.yui3-aquinama-item-interested{
+	width: 28px;
+	height: 28px;
+	float: right;
+	margin-left: 10px;
+	opacity: 0.5;
+	-moz-opacity: 0.5;
+	filter:alpha(opacity=5);
+}
+.yui3-aquinama-item-interested:hover{
+	opacity: 0.8;
+	-moz-opacity: 0.8;
+	filter:alpha(opacity=8);
+}
+
+
+
+.yui3-aquinama-item-price{
+	font-size: 130%;
+	color: #FEFEFE;
+	font-weight: bold;
+	margin-right: 10px;
+	background-color: #999;
+	padding: 3px;
+	border-radius: 5px;
+}
+
+
+.yui3-aquinama-item-load{
+	display: block;
+	margin: auto;
+	margin-top: 10px;
+}
