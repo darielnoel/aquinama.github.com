@@ -1,7 +1,7 @@
 /**
  * @author russo and dariel
  */
-YUI().use('aquinama-datacontroller','aquinama-revolretrieve','aquinama-literal', 'aquinama-search', 'aquinama-list','aquinama-searchlist','transition', function(Y){				
+YUI().use('aquinama-datacontroller','aquinama-revolretrieve','aquinama-literal', 'aquinama-search', 'aquinama-list','aquinama-searchlist', 'aquinama-tools', function(Y){				
 			
 
 
@@ -22,9 +22,12 @@ YUI().use('aquinama-datacontroller','aquinama-revolretrieve','aquinama-literal',
 		Y.one('#yui3-aquinama-news').addClass('yui3-aquinama-hidden');
 		Y.one('#yui3-aquinama-list').removeClass('yui3-aquinama-hidden');
 		App.list.changeMoreTex('Ver mas resultados');
+		App.list.clearList();
 		App.list.showLoad();
 		Y.log(e.filter);
 		App.datacontroller.getData(e.filter);
+
+		App.interest.deselect();
 	};
 
 
@@ -43,22 +46,38 @@ YUI().use('aquinama-datacontroller','aquinama-revolretrieve','aquinama-literal',
 	
 	App.categoryRetrieve = function(e){
 
+		App.list.set('atotal', App.datacontroller.get('search.total'));
+
+		Y.log('esto es lo que ahi');
+		Y.log(App.datacontroller.get('search.total'));
+
 		App.list.set('emodellist', e.data);
+
 		App.filter.set('source', App.list.source());
 
-		//aki agarro al tipo y le creo sus filtros   
-		
-		var tags = [];
 
-		var obj = App.literal.getAttr(App.search.get('aselect'));
+		//le pido a datacontroller que me de los tags de una categoria
+		var tags = {};
 
+		tags = App.datacontroller.tags(App.search.get('aselect'));
+
+
+		//Le paso estos tags a la lista TODO: La lista no tiene porke tener estos tags
+		//con el id le basta
+		App.list.set('tags',tags);
+
+		App.filter.set('tags',tags);
+
+		//seteo los active filters 
 		App.filter.set('afilter',{});
 
+		
 
-		tags = App.literal.walkToRoot(obj,tags,'tags');
 
 
-		App.list.set('tags',tags);
+		Y.log(App.datacontroller.get('search.total'));
+
+		
 
 		//App.filter.sendRequest('led nuevo');
 		//App.filter.sendRequest('nuevo');
@@ -77,19 +96,6 @@ YUI().use('aquinama-datacontroller','aquinama-revolretrieve','aquinama-literal',
 		//mando un request con el valor de lo que halla en el campo
 		App.filter.sendRequest(App.filter.get('value'));
 
-
-		
-		/*var temp = e.data.split(',');
-
-		App.filter.get('query');
-		temp.push(App.filter.get('query'));
-
-		//App.filter.set('resultFilters',customFilter);
-		//App.filter.set('resultHighlighter',customHighlighter);
-
-
-		App.filter.sendRequest(temp);*/
-		//App.filter.sendRequest('new nuevo');
 	};
 
 
@@ -112,7 +118,19 @@ YUI().use('aquinama-datacontroller','aquinama-revolretrieve','aquinama-literal',
 
 	App.InterestMe = function(e){
 		App.datacontroller.addInterest(e.model);
-		Y.log(App.datacontroller.get('interest'));
+
+		App.interest.set('acount', App.datacontroller.get('interest').size());
+		
+
+		
+
+
+	}
+
+	App.NoInterestMe = function(e){
+		App.datacontroller.notInterest(e.model);
+		
+		App.interest.set('acount', App.datacontroller.get('interest').size());
 	}
 
 	App.articleData = function(e){
@@ -149,7 +167,8 @@ YUI().use('aquinama-datacontroller','aquinama-revolretrieve','aquinama-literal',
 	});
 
 	App.datacontroller = new Y.AquiNaMa.DataController({
-		retrieve: {RevolRetrieve:App.revolRetrieve}
+		retrieve: {RevolRetrieve:App.revolRetrieve},
+		literal: App.literal
 	});
 
 
@@ -161,93 +180,24 @@ YUI().use('aquinama-datacontroller','aquinama-revolretrieve','aquinama-literal',
 
 	App.list.render('#yui3-aquinama-left');
 
+	App.interest = new Y.AquiNaMa.Interest({
+		acount: App.datacontroller.get('interest').size(),
+		boundingBox: Y.one('.yui3-aquinama-interest'),
+		contentBox: Y.one('.yui3-aquinama-interest')
+	});
+
+	App.interest.render();
 
 
-
-		// Simple example of a case-insensitive phrase matching custom
-	// filter.
-	function customFilter(query, results){
-		Y.log('my custom filter');
-
-		var temps;
-
-		//Hacer un subword match con la query que venga
-		temps = Y.AutoCompleteFilters.subWordMatch(query,results); 
-
-
-
-		//Hacer para cada active filter un orFilter
-		Y.each(App.filter.get('afilter'),function(i){
-			if(i){
-				temps = orFilter(i, temps);
-			}
-		});
-
-		return temps;
-	}
-
-
-
-	function orFilter(query, results) {
-	  Y.log('my or filter');
-
-	  var temp,inside,hello;
-
-
-	  temp =  Y.Array.filter(results, function (result) {
-	  	//inside = result.text.toLowerCase().indexOf(query[0]);
-	  	inside = false;
-		  if(Y.Lang.isArray(query)){
-			  		  	for (var i = 0 ; i < query.length ; i++){
-		  		hello = result.text.toLowerCase().indexOf(query[i]);
-		  		if(hello !== -1){
-		  			inside = true;
-		  			break;
-		  		} 
-		  	}
-
-		  	return inside;
-		  }else{
-    		return result.text.toLowerCase().indexOf(query) !== -1;
-	
-		  }
-
-
-	   	//return inside !== -1;
-	  });
-
-	  return temp;
-	}
-
-	function customHighlighter(query, results) {
-		var temp,inside,myquery;
-		Y.log('customHighlighter');
-
-		//query = ['nuevo','new'];
-		//la query va a ser la concatenacion de los active filters + la query que viene
-		myquery = App.filter.concatAll(query);
-
-  		temp =  Y.Array.map(results, function (result) {
-    		inside =  Y.Highlight.all(result.text, myquery);
-    		return inside;
- 		 });
-
- 		return temp; 
-}
-
-
-	//modulo de filtar
+		//modulo de filtar
 	App.filter = new Y.AquiNaMa.Filter({
 			    inputNode: App.search.get('contentBox').one('.yui3-aquinama-search-filter'),
 			    minQueryLength: 0,
 			    queryDelay: 300,
 			    resultTextLocator: 'tags',
-			    //resultHighlighter: 'subWordMatch',
-			    resultHighlighter : customHighlighter,
-			  	//resultFilters: 'subWordMatch',
-			  	resultFilters : customFilter
-
 	});
+
+
 	App.filter.set('source', App.list.source());
 
 	Y.log('El filter');
@@ -269,6 +219,8 @@ YUI().use('aquinama-datacontroller','aquinama-revolretrieve','aquinama-literal',
 	Y.on('aquinama-datacontroller:error', App.Error);  
 	
 	Y.on('aquinama-item:interest', App.InterestMe); 
+
+	Y.on('aquinama-item:no-interest', App.NoInterestMe); 
 	
 	Y.on('aquinama-articlemodel:articleData', App.articleData); 
 
@@ -277,8 +229,8 @@ YUI().use('aquinama-datacontroller','aquinama-revolretrieve','aquinama-literal',
 	Y.on('aquinama-search:clear', function(e){
 		App.list.get('boundingBox').addClass('yui3-aquinama-hidden');
 		Y.one('#yui3-aquinama-news').removeClass('yui3-aquinama-hidden');
+		App.interest.deselect();
 	});
-
 
 
 
@@ -291,7 +243,11 @@ YUI().use('aquinama-datacontroller','aquinama-revolretrieve','aquinama-literal',
 		App.list.showLoad();
 		App.list.set('emodellist', App.datacontroller.get('interest'));
 		App.filter.set('source', App.list.source());
+
+		App.search.setCategory('Me Interesan');
 	});
+
+
 
 
 	Y.one('.yui3-aquinama-laster').on('click', function(e){

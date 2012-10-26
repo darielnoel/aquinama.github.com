@@ -16,15 +16,7 @@
 
 
 .yui3-aquinama-list-control li{
-	float: left;
-}
-
-
-.yui3-aquinama-list-control-order li {
-	float: left;
-	margin: 10px;
-	font-size: 110%;
-	font-weight: bold;
+	float: right;
 }
 
 .yui3-aquinama-list-load{
@@ -35,6 +27,8 @@
 
 .yui3-aquinama-list-control-tags{
 	float:right;
+	width: 540px;
+	padding-top: 5px;
 }
 
 
@@ -49,7 +43,7 @@
 	-moz-border-radius: 10px;
 	border-radius: 10px;
 	text-align: center;
-	margin: 10px 5px;
+	margin: 5px 5px;
 	border: none;
 	padding: 7px 15px;
 }
@@ -60,9 +54,100 @@
 	cursor:pointer;
 }
 
+.yui3-aquinama-sort-button{
+	float: left;
+	font-size: 110%;
+	font-weight: bold;
+}
 
-.yui3-aquinama-button-down
-{
+
+.yui3-aquinama-sort-button-content{
+	font-size: 100%;
+	font-weight: bold;
+	line-height: normal;
+	color: #FEFEFE;
+	padding: 6px;
+	text-align: center;
+	margin-left: 10px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border: none;
+	padding: 7px 15px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.yui3-aquinama-sort-button-content:hover{
+	cursor: pointer;
+}
+
+.yui3-aquinama-sort-button-normal{
+	background-color: #FC9D49;
+}
+
+.yui3-aquinama-sort-button-desc{
+	background-color: #adce4c;
+}
+
+.yui3-aquinama-sort-button-asc{
+	background-color: #adce4c;
+}
+
+.yui3-aquinama-sort-button-img{
+	float: right;
+	margin-top: 5px;
+	margin-left: 10px;
+}
+
+.yui3-aquinama-sort-button-normal .yui3-aquinama-sort-button-img{
+	background-image: none;
+	width: 0px;
+	height: 0px;
+}
+
+.yui3-aquinama-sort-button-desc .yui3-aquinama-sort-button-img{
+	background-image:url(../../../../../assets/images/desc.png);
+	width: 13px;
+	height: 14px;
+}
+
+.yui3-aquinama-sort-button-asc .yui3-aquinama-sort-button-img{
+	background-image:url(../../../../../assets/images/asc.png);
+	width: 13px;
+	height: 14px;
+}
+
+
+.yui3-aquinama-list-info{
+	position: relative;
+	clear: both;
+	background-color: #F9F9F9;
+	margin: 5px;	
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 12px;
+	color: #888;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+}
+
+
+.yui3-aquinama-list-more{
+	text-align: center;
+	color: #888;
+	padding: 5px;
+	font-size: 110%;
+	
+}
+
+.yui3-aquinama-list-more:hover{
+	cursor: pointer;
+}
+
+
+.yui3-aquinama-button-down{
 	background-color: #adce4c;
 	color:white;
 }
@@ -86,15 +171,4 @@
 	height: 13px;
 	margin-left: 5px;
 	visibility: visible;
-}
-
-
-
-.yui3-aquinama-button-order-asc div{
-	background-image:url(../../../../../assets/images/asc.png);
-
-}
-
-.yui3-aquinama-button-order-desc div{
-	background-image:url(../../../../../assets/images/desc.png);
 }

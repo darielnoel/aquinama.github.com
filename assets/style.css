@@ -64,6 +64,12 @@ body{
 	padding-right: 0px;
 	color: #333;
 }
+
+#yui3-aquinama-tools{
+	width: 200px;
+	float:right;
+}
+
 #yui3-aquinama-publicity{
 	margin-right: 10px;
 	display: none;
@@ -104,33 +110,12 @@ body{
 	-moz-border-radius: 5px;
 
 }
-#yui3-aquinama-rect1{
-	background-color: #FC9D49;
-	width: 25px;
-	height: 18px;
-}
-#yui3-aquinama-rect2{
-	background-color: #ADCE4C;
-	width: 32px;
-	height: 21px;
-}
-#yui3-aquinama-rect3{
-	background-color: #ADCE4C;
-	width: 27px;
-	height: 17px;
-}
-#yui3-aquinama-rect4{
-	background-color: #FC9D49;
-	width: 19px;
-	height: 13px;
-}
-
 
 
 #yui3-aquinama-footer{
 	text-align: center;
 	clear: both;
-	color: #333;
+	color: #888;
 	padding-left: 10px;
 	width: 1120px;
 	margin: auto;
@@ -168,7 +153,6 @@ body{
 	cursor: pointer;
 }
 
-
 .yui3-aquinama-input-text{	
 	font-family: Helvetica, sans-serif;
 	line-height: normal;
@@ -177,47 +161,10 @@ body{
 	-moz-border-radius: 5px;
 	border-radius: 5px;
 }
+
 .yui3-aquinama-hidden{
 	display: none;
 }
-
-
-
-.yui3-aquinama-close{
-	float: right;
-	background-image: url(images/close.png);
-	width: 23px;
-	height: 23px;
-	margin-top: 5px;
-	margin-left: 5px;
-	opacity: 0.4;
-	-moz-opacity: 0.4;
-	filter:alpha(opacity=0.4);
-}
-
-.yui3-aquinama-close:hover, .yui3-aquinama-search-close:hover{
-	opacity: .7;
-	-moz-opacity: 1;
-	filter:alpha(opacity=1);
-}
-
-
-.yui3-aquinama-search-close{
-	float: left;
-	margin-left: -30px;
-	background-image: url(images/close.png);
-	width: 23px;
-	height: 23px;
-	margin-top: 5px;
-	opacity: .4;
-	z-index: 12;
-	-moz-opacity: 0.7;
-	filter: alpha(opacity=7);
-}
-
-
-
-
 
 
  #yui3-aquinama-head{
@@ -227,10 +174,6 @@ body{
 
 .yui3-aquinama-clear{
 	clear: both;
-}
-
-.yui3-highlight{
-	background-color: #FC9D49;
 }
 
 
@@ -261,7 +204,7 @@ body{
 
 
 
-.yui3-aquinama-interest, .yui3-aquinama-laster{
+.yui3-aquinama-laster{
 	padding: 5px;
 	color: #A9A9A9;
 	text-align: right;
@@ -279,8 +222,7 @@ body{
 	-moz-border-radius: 10px;
 
 }
-
-.yui3-aquinama-interest:hover, .yui3-aquinama-laster:hover{
+.yui3-aquinama-laster:hover{
 	cursor: pointer;
 	padding-right: 50px;
 	/*background-color: #ADCE4C;
@@ -290,34 +232,4 @@ body{
 	border-right: none;
 
 	
-}
-.yui3-aquinama-interest-number{
-	background-color: #FC9D49;
-	padding: 3px;
-	margin-right: 10px;
-	color: white;
-	padding-right: 5px;
-	padding-left: 5px;
-	font-size: 10px;
-	border-radius: 5px;
-	-webkit-border-radius: 5px;
-	-moz-border-radius: 5px;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#yui3-aquinama-search .yui3-aclist-item-active{
-	background-color:#ADCE4C;
 }

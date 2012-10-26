@@ -1,0 +1,42 @@
+.yui3-aquinama-interest{
+	padding: 5px;
+	color: #A9A9A9;
+	text-align: right;
+	font-weight: bold;
+	display: inline-block;
+	float: right;
+	border: 2px solid #E6E6E6;
+	margin-bottom: 10px;
+	border-right: none;
+	font-size: 14px;
+	padding-right: 35px;
+	padding-left: 15px;
+	border-radius: 10px;
+	-webkit-border-radius: 10px 0px 0px 10px;
+	-moz-border-radius: 10px;
+
+}
+
+.yui3-aquinama-interest:hover, .yui3-aquinama-interest-focus{
+	cursor: pointer;
+	padding-right: 50px;
+	/*background-color: #ADCE4C;
+	color: #FFF;*/
+
+	border: 2px solid #CCC;
+	border-right: none;
+
+	
+}
+.yui3-aquinama-interest-number{
+	background-color: #FC9D49;
+	padding: 3px;
+	margin-right: 10px;
+	color: white;
+	padding-right: 5px;
+	padding-left: 5px;
+	font-size: 10px;
+	border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+}
