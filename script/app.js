@@ -14,6 +14,8 @@ YUI().use('aquinama-datacontroller','aquinama-revolretrieve','aquinama-literal',
 
 	App.model = App.tree;
 
+	App.error = error;
+
 	
 	
 
@@ -23,11 +25,16 @@ YUI().use('aquinama-datacontroller','aquinama-revolretrieve','aquinama-literal',
 		Y.one('#yui3-aquinama-list').removeClass('yui3-aquinama-hidden');
 		App.list.changeMoreTex('Ver mas resultados');
 		App.list.clearList();
+		//seteo los active filters 
+		App.filter.clear();
+
 		App.list.showLoad();
 		Y.log(e.filter);
 		App.datacontroller.getData(e.filter);
 
 		App.interest.deselect();
+
+		Y.one('#yui3-aquinama-error').set('innerHTML', '');
 	};
 
 
@@ -35,12 +42,18 @@ YUI().use('aquinama-datacontroller','aquinama-revolretrieve','aquinama-literal',
 		Y.log('Escuche un error');
 		Y.log(e.data.error);
 
-		if(e.data.error === 'No fueron encontrados mas resultados'){
-			App.list.changeMoreTex('No mas resultados para '+App.filter.get('query')+' '+App.list.getActiveTags() +' en ' + App.search.get('aselect'));
+		if(e.data.error.code === 2){
+			App.list.changeMoreTex(App.error[2].msg+' '+App.filter.get('query')+' '+App.list.getActiveTags() +' en ' + App.search.get('aselect'));
 			App.list.hideLoad();
 
 
 
+		}
+		else{
+			Y.one('#yui3-aquinama-error').set('innerHTML', '<p>' + App.error[e.data.error.code].msg) + '</p>';
+			Y.one('#yui3-aquinama-list').addClass('yui3-aquinama-hidden');
+
+			App.search.clearSearch();
 		}
 	};
 	
@@ -52,7 +65,6 @@ YUI().use('aquinama-datacontroller','aquinama-revolretrieve','aquinama-literal',
 		Y.log(App.datacontroller.get('search.total'));
 
 		App.list.set('emodellist', e.data);
-
 		App.filter.set('source', App.list.source());
 
 
@@ -65,17 +77,12 @@ YUI().use('aquinama-datacontroller','aquinama-revolretrieve','aquinama-literal',
 		//Le paso estos tags a la lista TODO: La lista no tiene porke tener estos tags
 		//con el id le basta
 		App.list.set('tags',tags);
-
 		App.filter.set('tags',tags);
 
 		//seteo los active filters 
 		App.filter.set('afilter',{});
 
-		
-
-
-
-		Y.log(App.datacontroller.get('search.total'));
+		Y.one('#yui3-aquinama-error').set('innerHTML', '');
 
 		
 
@@ -243,8 +250,11 @@ YUI().use('aquinama-datacontroller','aquinama-revolretrieve','aquinama-literal',
 		App.list.showLoad();
 		App.list.set('emodellist', App.datacontroller.get('interest'));
 		App.filter.set('source', App.list.source());
+		App.filter.clear();
 
 		App.search.setCategory('Me Interesan');
+
+		Y.one('#yui3-aquinama-error').set('innerHTML', '');
 	});
 
 

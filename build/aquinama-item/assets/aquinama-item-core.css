@@ -79,8 +79,13 @@
 
 .yui3-aquinama-item-container{
 	border-top: 1px solid #EEE;
-	padding: 10px;
 	text-align: justify;
+	height: 0px;
+	overflow: hidden;
+}
+
+.yui3-aquinama-item-container-a{
+	padding: 10px;
 }
 .yui-3-aquinama-item-color .yui3-aquinama-item-container{
 	border-top: 1px solid #FFF;	
