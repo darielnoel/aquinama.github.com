@@ -29,7 +29,6 @@ YUI().use('aquinama-datacontroller','aquinama-revolretrieve','aquinama-literal',
 		App.filter.clear();
 
 		App.list.showLoad();
-		Y.log(e.filter);
 		App.datacontroller.getData(e.filter);
 
 		App.interest.deselect();
@@ -39,8 +38,7 @@ YUI().use('aquinama-datacontroller','aquinama-revolretrieve','aquinama-literal',
 
 
 	App.Error = function(e){
-		Y.log('Escuche un error');
-		Y.log(e.data.error);
+		
 
 		if(e.data.error.code === 2){
 			App.list.changeMoreTex(App.error[2].msg+' '+App.filter.get('query')+' '+App.list.getActiveTags() +' en ' + App.search.get('aselect'));
@@ -60,9 +58,6 @@ YUI().use('aquinama-datacontroller','aquinama-revolretrieve','aquinama-literal',
 	App.categoryRetrieve = function(e){
 
 		App.list.set('atotal', App.datacontroller.get('search.total'));
-
-		Y.log('esto es lo que ahi');
-		Y.log(App.datacontroller.get('search.total'));
 
 		App.list.set('emodellist', e.data);
 		App.filter.set('source', App.list.source());
@@ -97,8 +92,6 @@ YUI().use('aquinama-datacontroller','aquinama-revolretrieve','aquinama-literal',
 		//active filter update
 		App.filter.afilterPopulate(e.data);
 
-
-		Y.log(App.filter.get('afilter'));
 
 		//mando un request con el valor de lo que halla en el campo
 		App.filter.sendRequest(App.filter.get('value'));
@@ -207,9 +200,6 @@ YUI().use('aquinama-datacontroller','aquinama-revolretrieve','aquinama-literal',
 
 	App.filter.set('source', App.list.source());
 
-	Y.log('El filter');
-	Y.log(App.search);
-
 	// Listener 
 	Y.on('aquinama-search:search', App.Search);
 
@@ -269,8 +259,6 @@ YUI().use('aquinama-datacontroller','aquinama-revolretrieve','aquinama-literal',
 
 	});
 			    
-	
-	Y.log(App.datacontroller.get('interest'));
 
 
 
