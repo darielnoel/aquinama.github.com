@@ -1,0 +1,1 @@
+YUI.add("aquinama-jsondataschema",function(E){E.namespace("AquiNaMa");var B=E.Lang,A=B.isString,D=B.isNumber,C=E.Base.create("aquinama-jsondataschema",E.Base,[],{initializer:function(G){var F=this;}},{ATTRS:{retrieve:{value:[]}}});E.AquiNaMa.JSONDataSchema=C;},"@VERSION@",{skinnable:false,requires:["dataschema-json"]});

@@ -70,6 +70,7 @@
 .yui3-aquinama-search-category-list{
 	position: absolute;
 	color:#808080;
+	right: 10px;
 	background-color: #FCFCFC;
 	padding-top: 5px;
 	clear: both;
@@ -81,10 +82,46 @@
 	-moz-border-radius: 0px 10px 10px 10px;
 }
 
+
+
 .yui3-aquinama-search-category-list li{
 	margin-left: 10px;
 }
 
+.yui3-aquinama-search-advanced-list{
+	position: absolute;
+	color:#808080;
+	right: 10px;
+	background-color: #FCFCFC;
+	padding: 10px;
+	clear: both;
+	border: 2px solid #F6F6FB;
+	border-top: none;
+	z-index: 10;
+	border-radius: 10px 0px 10px 10px;
+	-webkit-border-radius: 10px 0px 10px 10px;
+	-moz-border-radius: 10px 0px 10px 10px;
+}
+
+.yui3-aquinama-search-advanced-list input{
+	margin: 10px;
+	width: 80px;
+	padding: 3px;
+}
+
+.yui3-aquinama-search-advanced-list h1{
+	margin-left: 10px;
+	font-size: 100%;
+	background-color: #E6E6E6;
+	text-align: left;
+	font-weight: bold;
+	margin-bottom: 10px;
+	padding: 3px;
+	padding-left: 10px;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+}
 
 
 
