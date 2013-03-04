@@ -7,27 +7,30 @@
 		<link href="assets/style.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body class="yui3-skin-sam yui-skin-sam">
+			<div class="loading-main">
+				<img src="assets/images/ajax-loader.gif"/>
+			</div>
 		<div id="yui3-aquinama-container">
+
 			<div id="yui3-aquinama-head">
 				<h1>Aqui<span class="yui3-aqunama-green">N</span>a<span class="yui3-aqunama-green">M</span>a</h1>
 				<ul id="yui3-aquinama-social">
 					<li>
+						<a href="http://www.facebook.com/aquinama" target="_blank"><img src="assets/images/social/facebook.png" alt="Facebook" title="Vis&iacute;tanos en Facebook"></a>
+					</li>
+				<li>
 						<a href="https://twitter.com/@aquinama" target="_blank"><img src="assets/images/social/twetter.png" alt="Twetter" title="S&iacute;quenos en Twetter"></a>
 					</li>
 					<li>
 						<a href="https://plus.google.com/116650544596962474088/posts" target="_blank"><img src="assets/images/social/google+.png" alt="Google +" title="Vis&iacute;tanos en Google+"></a>
-					</li>
-					<li>
-						<a href="http://www.facebook.com/aquinama" target="_blank"><img src="assets/images/social/facebook.png" alt="Facebook" title="Vis&iacute;tanos en Facebook"></a>
 					</li>
 				</ul>
 			</div>
 			<div id="yui3-aquinama-right">
 				<div id="yui3-aquinama-tools">
 					<ul>
+						<li class="yui3-aquinama-busqueda yui3-aquinama-laster yui3-aquinama-interest-focus">B&uacute;squeda</li>
 						<li class="yui3-aquinama-interest"><span class="yui3-aquinama-interest-number">0</span>Me interesa</li>
-						<li class="yui3-aquinama-laster">Herramientas</li>
-						<li class="yui3-aquinama-laster">Ayuda</li>
 						<li class="yui3-aquinama-clear"></li>
 						
 					</ul>
@@ -44,22 +47,33 @@
 			<div id="yui3-aquinama-left">
 
 
-				<div id="yui3-aquinama-search"></div>	
+				<div id="yui3-aquinama-search">
+					<div>
+							<div data-tags="Todo" class="yui3-aquinama-search-all">Todo</div>
+							<ul class="yui3-aquinama-search-category-filter">
+								
+							</ul>
+							<input class="yui3-aquinama-search-filter yui3-aquinama-input-text yui3-aquinama-hidden" type="text" placeholder="Filtar"/>
+							<form class="yui3-aquinama-search-form yui3-skin-sam" action="#">
+								<input class="yui3-aquinama-search-text yui3-aquinama-input-text" type="text" placeholder="Buscar"/>
+								<div class="yui3-aquinama-search-close yui3-aquinama-hidden"></div>
+								<button type="submit" class="yui3-aquinama-search-button yui3-aquinama-button-up">Buscar</button>
+								<img src="assets/images/glade.png" width="34" class="yui3-aquinama-search-advanced">
+						  	</form> 
+						  	<div class="yui3-aquinama-clear"></div>
+						  	<div class="yui3-aquinama-search-category-list yui3-aquinama-hidden"></div>
+						  	<div class="yui3-aquinama-search-advanced-list yui3-aquinama-hidden">
+						  		<h1>Precio</h1>
+						  		<input class="yui3-aquinama-input-text" type="text" name="min" placeholder="Minimo"/>
+						  		<br/>
+						  		<input class="yui3-aquinama-input-text" type="text" name="max" placeholder="Maximo"/>
+						  	</div>
+						  </div>
+					</div>	
 				<div id="yui3-aquinama-news">
-					<!--<img id="yui3-aquinama-all-arrow" src="assets/images/all_arrow.png" />
-					<p id="yui3-aquinama-all-desc">Puedes ver todas</br> las categor&iacute;as.</p>
-
-					<img id="yui3-aquinama-advanced-arrow" src="assets/images/advanced_arrow.png" />
-					<p id="yui3-aquinama-all-advanced">Opciones avanzadas</br>Ejemp: Precio</p>
-
-					<img id="yui3-aquinama-interest-arrow" src="assets/images/interest_arrow.png" />
-					<p id="yui3-aquinama-all-interest">Increible</p>
-
-					<img id="yui3-aquinama-help-arrow" src="assets/images/help_arrow.png" />
-					<p id="yui3-aquinama-all-help">Por si quieres sacarnos el jugo</p>
-					-->
-
-
+				  <p id="yui3-aquinama-all-desc">
+				 
+				  </p>
 				</div>
 				<div id="yui3-aquinama-list" class="yui3-aquinama-hidden"></div>
 				<div id="yui3-aquinama-error"></div>	
@@ -71,6 +85,8 @@
 		<div id="yui3-aquinama-footer">
 				<h2>Copyright 2012 AquiNaMa. Todos los derechos reservados</h2>
 			</div>
+
+
 		<script src="http://yui.yahooapis.com/3.7.3/build/yui/yui-min.js"></script>
 		<script type="text/javascript" src="script/config.js"></script>
 		<script type="text/javascript" src="script/appTree.js"></script>
@@ -80,3 +96,4 @@
 			<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/66637359ns.gif" /></p></noscript>
 	</body>
 </html>
+
