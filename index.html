@@ -2,18 +2,34 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-		<title>AquiNaMa</title>
-		<link href="assets/reset-fonts-grids.css" rel="stylesheet" type="text/css" />
-		<link href="assets/style.css" rel="stylesheet" type="text/css" />
+		<meta http-equiv="Cache-Control" content="cache">
+		<title>AquiNaMa, Buscador de Anuncios en Cuba, F&aacute;cil y R&aacute;pido.</title>
+		<meta name="description" content="Buscador de anuncios clasificados en Cuba, donde siempre encuentras lo que buscas, de una manera f&aacutecil;cil e intuitiva, compra, venta, laptop, celulares, moviles, disco duro, casas, carros, empleos" />
+		<meta name="keywords" content="cuba, anuncios clasificados, anuncios clasificados gratis, compra, venta, compra venta computadoras, anuncios clasificados en cuba, anuncios clasificados de cuba, compra y venta en cuba, mercado en cuba, mercado de cuba, anuncios de cuba, anuncios en cuba, clasificados cuba, computadoras cuba, ordenadores cuba">
+
+		<link href="assets/basic.css" rel="stylesheet" type="text/css" />
 	</head>
 	<body class="yui3-skin-sam yui-skin-sam">
 			<div class="loading-main">
-				<img src="assets/images/ajax-loader.gif"/>
+
 			</div>
+			<div class="loading-main2">
+			    <div class="load">
+				<img src="assets/images/ajax-loader.gif"/>
+					<div>
+					    &iquest;Tienes una conexi&oacute;n lenta?</br>
+					    <span>El mi&eacute;rcoles 27 de marzo hay sorpresas!!!</span>
+					 	</br></br>
+							</div>
+				 </div>
+
+			</div>
+		<link href="assets/reset-fonts-grids.css" rel="stylesheet" type="text/css" />
+		<link href="assets/style.css" rel="stylesheet" type="text/css" />
 		<div id="yui3-aquinama-container">
 
 			<div id="yui3-aquinama-head">
-				<h1>Aqui<span class="yui3-aqunama-green">N</span>a<span class="yui3-aqunama-green">M</span>a</h1>
+				<a href="#act=init" title="Ir al inicio"><h1>Aqui<span class="yui3-aqunama-green">N</span>a<span class="yui3-aqunama-green">M</span>a</h1></a>
 				<ul id="yui3-aquinama-social">
 					<li>
 						<a href="http://www.facebook.com/aquinama" target="_blank"><img src="assets/images/social/facebook.png" alt="Facebook" title="Vis&iacute;tanos en Facebook"></a>
@@ -22,15 +38,17 @@
 						<a href="https://twitter.com/@aquinama" target="_blank"><img src="assets/images/social/twetter.png" alt="Twetter" title="S&iacute;quenos en Twetter"></a>
 					</li>
 					<li>
-						<a href="https://plus.google.com/116650544596962474088/posts" target="_blank"><img src="assets/images/social/google+.png" alt="Google +" title="Vis&iacute;tanos en Google+"></a>
+						<a href="https://plus.google.com/116650544596962474088/posts" target="_blank"><img src="assets/images/social/google+.png" alt="Google+" title="Vis&iacute;tanos en Google+"></a>
 					</li>
 				</ul>
 			</div>
 			<div id="yui3-aquinama-right">
 				<div id="yui3-aquinama-tools">
 					<ul>
-						<li class="yui3-aquinama-busqueda yui3-aquinama-laster yui3-aquinama-interest-focus">B&uacute;squeda</li>
-						<li class="yui3-aquinama-interest"><span class="yui3-aquinama-interest-number">0</span>Me interesa</li>
+						<li class="yui3-aquinama-busqueda yui3-aquinama-laster yui3-aquinama-interest-focus" title="Ir a la b&uacute;squeda">B&uacute;squeda</li>
+						<li class="yui3-aquinama-interest" title="Ver los que me interesan"><span class="yui3-aquinama-interest-number">0</span>Me interesa</li>
+						<!--<li class="yui3-aquinama-laster">Herramientas</li>-->
+						<!--<li class="yui3-aquinama-laster">Ayuda</li>-->
 						<li class="yui3-aquinama-clear"></li>
 						
 					</ul>
@@ -49,16 +67,16 @@
 
 				<div id="yui3-aquinama-search">
 					<div>
-							<div data-tags="Todo" class="yui3-aquinama-search-all">Todo</div>
+							<div data-tags="Todo" class="yui3-aquinama-search-all" title="Ver todas las categor&iacute;as">Todo</div>
 							<ul class="yui3-aquinama-search-category-filter">
 								
 							</ul>
-							<input class="yui3-aquinama-search-filter yui3-aquinama-input-text yui3-aquinama-hidden" type="text" placeholder="Filtar"/>
+							<input class="yui3-aquinama-search-filter yui3-aquinama-input-text yui3-aquinama-hidden" type="text" placeholder="Filtrar"/>
 							<form class="yui3-aquinama-search-form yui3-skin-sam" action="#">
-								<input class="yui3-aquinama-search-text yui3-aquinama-input-text" type="text" placeholder="Buscar"/>
-								<div class="yui3-aquinama-search-close yui3-aquinama-hidden"></div>
+								<input class="yui3-aquinama-search-text yui3-aquinama-input-text" type="text" placeholder="Ejem: impresora"/>
+								<div class="yui3-aquinama-search-close yui3-aquinama-hidden" title="Limpiar b&uacute;squeda"></div>
 								<button type="submit" class="yui3-aquinama-search-button yui3-aquinama-button-up">Buscar</button>
-								<img src="assets/images/glade.png" width="34" class="yui3-aquinama-search-advanced">
+								<img src="assets/images/glade.png" width="34" class="yui3-aquinama-search-advanced" title="B&uacute;squeda Avanzada">
 						  	</form> 
 						  	<div class="yui3-aquinama-clear"></div>
 						  	<div class="yui3-aquinama-search-category-list yui3-aquinama-hidden"></div>
@@ -74,6 +92,9 @@
 				  <p id="yui3-aquinama-all-desc">
 				 
 				  </p>
+				  <p id="yui3-aquinama-all-desc2">
+				 
+				  </p>
 				</div>
 				<div id="yui3-aquinama-list" class="yui3-aquinama-hidden"></div>
 				<div id="yui3-aquinama-error"></div>	
@@ -82,11 +103,10 @@
 			<div class="yui3-aquinama-clear"></div>
 			
 		</div>
+		<div class="go-top">IR ARRIBA</div>
 		<div id="yui3-aquinama-footer">
-				<h2>Copyright 2012 AquiNaMa. Todos los derechos reservados</h2>
-			</div>
-
-
+				<h2>Copyright 2012-2013 AquiNaMa. Todos los derechos reservados</h2>
+		</div>
 		<script src="http://yui.yahooapis.com/3.7.3/build/yui/yui-min.js"></script>
 		<script type="text/javascript" src="script/config.js"></script>
 		<script type="text/javascript" src="script/appTree.js"></script>
@@ -96,3 +116,4 @@
 			<noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/66637359ns.gif" /></p></noscript>
 	</body>
 </html>
+
