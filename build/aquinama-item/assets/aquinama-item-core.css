@@ -128,3 +128,38 @@
 .yui3-aquinama-item-bold{
 	font-weight: bold;
 }
+
+.yui3-aquinama-picture{
+	width: 14px;
+	height: 14px;
+	float: right;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 4px;
+	opacity: 0.4;
+	-moz-opacity: 0.4;
+	filter:alpha(opacity=4);
+}
+
+.yui3-aquinama-item-images{
+	float:left;
+}
+
+.yui3-aquinama-item-images img{
+	width:100px;
+	height:100px;
+	cursor:pointer;
+	margin-right: 5px;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+.yui3-aquinama-item-images img:hover{
+	width:102px;
+	height:102px;
+}
+
+div.images-container{
+	margin-top: 20px;
+}
